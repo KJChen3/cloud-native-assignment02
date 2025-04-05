@@ -18,7 +18,7 @@ jobs:
 
       - name: Run basic check
         run: |
-          if [[ $(grep -i "error" README.md) ]]; then
+          if grep -i "error" README.md; then
             echo "❌ Found 'error' in README.md"
             exit 1
           else
@@ -27,3 +27,4 @@ jobs:
 
       - name: Custom Step - just printing
         run: echo "This is an extra custom step"
+
